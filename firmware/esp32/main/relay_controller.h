@@ -1,27 +1,13 @@
 #ifndef RELAY_CONTROLLER_H
 #define RELAY_CONTROLLER_H
 
-#define RELAY_PIN 26 // Change to your actual relay pin
+#include <Arduino.h>
 
-bool pumpState = false;
+#define RELAY_PIN 25 // Pin untuk Relay
 
-void setupRelay() {
-  pinMode(RELAY_PIN, OUTPUT);
-  digitalWrite(RELAY_PIN, LOW); // Assume LOW is OFF
-}
-
-void turnOnPump() {
-  digitalWrite(RELAY_PIN, HIGH); // Assume HIGH is ON
-  pumpState = true;
-}
-
-void turnOffPump() {
-  digitalWrite(RELAY_PIN, LOW);
-  pumpState = false;
-}
-
-bool isPumpOn() {
-  return pumpState;
-}
+void setupRelay();
+void turnOnPump();
+void turnOffPump();
+bool isPumpOn();
 
 #endif
